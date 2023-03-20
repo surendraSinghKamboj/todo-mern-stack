@@ -1,6 +1,6 @@
 console.clear();
 import express from "express";
-import os, { cpus } from "os";
+import os from "os";
 
 const app = express();
 
