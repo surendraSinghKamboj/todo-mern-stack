@@ -4,55 +4,59 @@
 }
 form {
 	width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 90vh;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 90vh;
 	box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
-input{
-    margin-top: 20px;
-    width: 70%;
-    height: 36px;
-    font-size: 24px;
-    padding-left: 10px;
-    padding-right: 10px;
+input {
+	margin-top: 20px;
+	width: 70%;
+	height: 36px;
+	font-size: 24px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
-button{
-    margin-top: 20px;
-    background-color: blue;
-    color: white;
-    width: 100px;
-    height: 36px;
-    font-size: 22px;
-    border-radius: 10px;    
-    cursor: pointer;
+button {
+	margin-top: 20px;
+	background-color: blue;
+	color: white;
+	width: 100px;
+	height: 36px;
+	font-size: 22px;
+	border-radius: 10px;
+	cursor: pointer;
 }
-button:hover{
-    background-color: green;
+button:hover {
+	background-color: green;
 }
 
-.cards{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+.cards {
+	display: flex;
+	overflow-x: scroll;
+    width: 80vw;
+    margin: auto;
+	margin-top: 30px;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
 }
-.card{
-    width: 400px;
-    height: 200px;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.card {
+	width: 400px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-span{
-    font-size: 20px;
-    font-weight: bold;
+.card:hover {
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.4);
+}
+span {
+	font-size: 20px;
+	font-weight: bold;
 }

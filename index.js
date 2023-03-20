@@ -25,7 +25,6 @@ app.get("/dashboard", (req, res) => {
         freemem: `${parseFloat(os.freemem() / 1073741824).toFixed(1)} Gb`,
         cpus: os.cpus(),
         network_wifi: os.networkInterfaces()["Wi-Fi"],
-        network_loop_back: os.networkInterfaces()["Loopback Pseudo-Interface 1"]
     };
     res.render("dashboard", values);
 });
