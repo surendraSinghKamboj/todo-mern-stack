@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Dashboard</title>
+	</head>
+
+	<body>
+		<h1>Architecure: <%= arch %></h1>
+		<h1>OS type: <%= ostype %></h1>
+		<h1>OS Platform: <%= osplatform %></h1>
+		<h1>Total Memeory: <%= totalmem %></h1>
+		<h1>Free Memeory: <%= freemem %></h1>
+
+		<div class="cards">
+			<% cpus.forEach((item)=>{ %>
+			<div class="card">
+				<p><span>model:</span> <%= item.model %></p>
+				<p><span>speed:</span> <%= item.speed %></p>
+			</div>
+			<% }) %>
+		</div>
+
+		<div class="cards">
+			<% network_wifi.forEach((item)=>{ %>
+			<div class="card">
+				<p><span>address :</span> <%= item.address %></p>
+				<p><span>netmask :</span><%= item.netmask %></p>
+				<p><span>family :</span> <%= item.family %></p>
+				<p><span>mac :</span> <%= item.mac %></p>
+				<p><span>cidr :</span> <%= item.cidr %></p>
+			</div>
+			<% }) %>
+		</div>
+        
+	</body>
+</html>

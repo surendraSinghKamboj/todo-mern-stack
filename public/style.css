@@ -34,3 +34,25 @@ button{
 button:hover{
     background-color: green;
 }
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.card{
+    width: 400px;
+    height: 200px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    font-size: 20px;
+    font-weight: bold;
+}
