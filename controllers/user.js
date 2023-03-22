@@ -1,12 +1,31 @@
 import { Users } from "../models/user.js";
 import bcrypt from "bcrypt";
 
+
+
+// User Register Controller
+
 export const register = async (req, res) => {
     const { name, email, mobile, password } = req.body;
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+
 
     try {
+
+
+        const user = Users.findOne({ email });
+
+        if (user) {
+            return res.status(401).json({
+                success: false,
+                message: "email id already Registered",
+            });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+
+
         await Users.create({
             name,
             email,
@@ -26,6 +45,11 @@ export const register = async (req, res) => {
         });
     }
 };
+
+
+
+
+// User Login Controller
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
