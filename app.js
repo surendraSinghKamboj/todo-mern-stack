@@ -15,4 +15,4 @@ app.use(express.json());
 app.use(morgan());
 
 // Using Routes
-app.use("/user", userRouter);
+app.use("/api/v1/user", userRouter);
