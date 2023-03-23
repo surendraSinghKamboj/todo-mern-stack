@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import userRouter from "./routes/user.js";
 import taskRouter from "./routes/task.js";
+import { errorMiddleware } from "./middlewares/error.js";
 
 dotenv.config({ path: "./config.env" });
 
@@ -22,3 +23,8 @@ app.use(cookieParser())
 // Using Routes
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/task", taskRouter);
+
+
+// error handler middleware
+
+app.use(errorMiddleware)
