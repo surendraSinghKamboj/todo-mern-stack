@@ -14,4 +14,12 @@ export const newTask = async (req, res, next) => {
 
 
 
-export const readTask = async (req, res) => { }
+export const readTask = async (req, res) => {
+    const userId = req.user._id
+    try {
+        const tasks = await Tasks.find({ user: userId })
+        res.status(200).json({ success: true, message: "successfull", data: tasks })
+    } catch (error) {
+        return req.status(404).json({ success: false, message: "Tasks not found" })
+    }
+}
