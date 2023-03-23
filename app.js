@@ -15,10 +15,14 @@ export const app = express();
 
 
 // Using Middlewares
-app.use(cors());
 app.use(express.json());
 app.use(morgan());
 app.use(cookieParser())
+app.use(cors({
+    origin: [process.env.FRONT_END_URL],
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    credentials: true
+}));
 
 // Using Routes
 app.use("/api/v1/user", userRouter);
