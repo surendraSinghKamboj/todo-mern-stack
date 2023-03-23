@@ -1,3 +1,4 @@
+import Login from '@/components/Login'
 import Head from 'next/head'
 
 
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className='min-h-[100vh]'>
-        
+        <Login />
       </main>
 
     </>
