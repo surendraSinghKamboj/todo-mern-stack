@@ -74,7 +74,7 @@ export const login = async (req, res) => {
 // user Logout
 
 export const logout = (req, res) => {
-    return res.status(200).cookie("token", "", { expiresIn: new Date(Date.now) }).json({ success: true, message: "Logout successfully......." })
+    return res.status(200).cookie("token", "", { expiresIn: new Date(Date.now()) }).json({ success: true, message: "Logout successfully......." })
 }
 
 // get profile data
