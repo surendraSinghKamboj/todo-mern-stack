@@ -51,7 +51,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = await Users.findOne({ email })
+        const user = await Users.findOne({ email }).select("+password");
         if (!user) {
             return res.status(404).json({ success: false, message: "Email-id or password is invailid" })
         }
@@ -60,10 +60,27 @@ export const login = async (req, res) => {
             return res.status(404).json({ success: false, message: "Email-id or password is invailid" })
         }
 
-        sendToken(user, res, "Login Successfully....")
+        sendToken(user, res, `Welcome back, ${user.name}`)
 
     } catch (error) {
         console.error(error)
         return res.status(401).json({ success: false, message: error })
     }
+}
+
+
+
+
+// user Logout
+
+export const logout = (req, res) => {
+    return res.status(200).cookie("token", "", { expiresIn: Date.now }).json({ success: true, message: "Logout successfully......." })
+}
+
+// get profile data
+
+export const getMyProfile = (req, res) => {
+
+    res.status(200).json({ success: false, user: req.user })
+
 }

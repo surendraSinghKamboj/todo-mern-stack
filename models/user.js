@@ -17,6 +17,7 @@ const users = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+        select:false
     },
     createdAt: {
         type: Date,
